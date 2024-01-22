@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Pintar!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #result {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #resetButton {
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tes Kepintaran</h1>
+
+<form id="randomNumberForm">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="button" onclick="generateRandomPercentage()">Cek Pintar</button>
+    <button type="reset" id="resetButton">Reset</button>
+</form>
+
+<div id="result"></div>
+
+<footer>
+    <p>&copy; 2024 Gilang Wadhani. Hak Cipta Dilindungi.</p>
+</footer>
+
+<script>
+    function generateRandomPercentage() {
+        const name = document.getElementById('name').value;
+        const randomPercentage = Math.floor(Math.random() * 101);
+        const resultElement = document.getElementById('result');
+        const additionalText = "Terimakasih atas partisipasinya!";
+
+        resultElement.innerHTML = `<p>${name}, Kepintaran anda: ${randomPercentage}%. ${additionalText}</p>`;
+    }
+</script>
+
+</body>
+</html>
